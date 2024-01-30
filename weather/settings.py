@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from weather_app.views import custom_csrf_failure_view
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -125,3 +126,6 @@ STATIC_URL = '/static/'
 
 CORS_ALLOWED_ORIGINS = [
     "https://weatherap-production.up.railway.app",]
+
+
+CSRF_FAILURE_VIEW = 'myapp.views.custom_csrf_failure_view'
