@@ -11,7 +11,7 @@ function getLocation() {
         longitude.value=position.coords.longitude 
         }
 
-        );
+        )
 
 }
 
