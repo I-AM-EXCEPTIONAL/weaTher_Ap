@@ -1,6 +1,11 @@
 from django.shortcuts import render
 import requests
 import os
+from django.views.decorators.debug import sensitive_post_parameters
+from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import requires_csrf_token
+from django.http import HttpResponseForbidden
+from django.template import loader
 
 def get_weather_data(latitude, longitude):
     key = '83c2e6b3b8f34b5eb770212d2d3cde6f'
@@ -34,3 +39,15 @@ def home(request):
         context = {}
 
     return render(request, 'index.html', context)
+
+
+
+@sensitive_post_parameters()
+@never_cache
+@requires_csrf_token
+def custom_csrf_failure_view(request, reason=""):
+    """
+    Custom view for handling CSRF failure.
+    """
+    template = loader.get_template('csrf_failure.html') 
+    return HttpResponseForbidden(template.render({'reason': reason}, request))
