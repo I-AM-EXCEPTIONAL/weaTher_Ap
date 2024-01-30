@@ -123,5 +123,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-CORS_ALLOWED_ORIGINS = [
-    "https://weatherap-production.up.railway.app",]
+#CORS_ALLOWED_ORIGINS = [
+    #"https://weatherap-production.up.railway.app",]
