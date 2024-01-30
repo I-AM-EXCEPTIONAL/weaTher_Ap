@@ -128,4 +128,4 @@ CORS_ALLOWED_ORIGINS = [
     "https://weatherap-production.up.railway.app",]
 
 
-CSRF_FAILURE_VIEW = 'myapp.views.custom_csrf_failure_view'
+CSRF_FAILURE_VIEW = 'weather_app.views.custom_csrf_failure_view'
