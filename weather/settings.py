@@ -126,3 +126,8 @@ STATIC_URL = '/static/'
 
 CORS_ALLOWED_ORIGINS = [
     "https://weatherap-production.up.railway.app",]
+
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://weatherap-production.up.railway.app"]
