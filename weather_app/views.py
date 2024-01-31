@@ -41,13 +41,3 @@ def home(request):
     return render(request, 'index.html', context)
 
 
-
-@sensitive_post_parameters()
-@never_cache
-@requires_csrf_token
-def custom_csrf_failure_view(request, reason=""):
-    """
-    Custom view for handling CSRF failure.
-    """
-    template = loader.get_template('csrf_failure.html') 
-    return HttpResponseForbidden(template.render({'reason': reason}, request))
